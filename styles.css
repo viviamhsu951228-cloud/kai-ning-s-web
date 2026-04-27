@@ -176,21 +176,54 @@ ul {
 /* =========================
    Hero
 ========================= */
-.hero-section {
-  min-height: calc(100vh - 72px);
-  display: flex;
+.hero-section 
+.hero-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) 320px;
   align-items: center;
+  gap: 3rem;
 }
 
-.hero-name {
-  font-size: clamp(2.8rem, 8vw, 5.3rem);
-  color: var(--color-heading);
+.hero-text {
+  max-width: 720px;
 }
 
-.hero-intro {
-  margin-top: var(--space-4);
+.hero-profile-card {
+  justify-self: end;
+  width: 100%;
+  max-width: 320px;
+  padding: 0.8rem;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 60px rgba(121, 86, 70, 0.14);
+  transform: rotate(1.5deg);
 }
 
+.profile-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.profile-caption {
+  margin: 0.8rem 0 0.2rem;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-profile-card {
+    justify-self: start;
+    max-width: 320px;
+  }
+}
 /* =========================
    Buttons
 ========================= */
